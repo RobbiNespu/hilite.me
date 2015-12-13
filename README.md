@@ -6,19 +6,20 @@ websites.
 
 ## Development
 
-To set up development environment you need to install these dependencies:
+To set up development environment you need to install nginx and virtualenv, then run:
 
-* On FreeBSD: `portmaster textproc/py-pygments www/nginx www/py-flask`
-* On Debian: `aptitude install nginx python-flask python-pygments`
+    % virtualenv env
+    % source env/bin/activate
+    % pip install -r requirements.txt
 
 Edit your main `nginx.conf`:
 
     http {
         ...
-        include /path/to/hilite.me/nginx.conf;
+        include /path/to/hilite.me/nginx-dev.conf;
     }
 
-Update the project location in `hilite.me/nginx.conf` and restart nginx.
+Update the project location in `hilite.me/nginx-dev.conf` and restart nginx.
 
 Add this line to your `/etc/hosts`:
 
